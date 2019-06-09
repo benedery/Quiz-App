@@ -37,7 +37,7 @@ const viewInitState = {
         }
     ],
     activeQuestion:0,
-
+    linePercent: 25,
 
 }
 
@@ -78,6 +78,7 @@ const viewReducer = (state = viewInitState, action) =>{
             return {
                 ...state,
                 activeQuestion: state.activeQuestion + 1,
+                linePercent:state.linePercent + 25,
             }
     }
     return state;
@@ -113,7 +114,7 @@ const rootReducer = combineReducers({
 //2. set photo And design in question.
 //3. make 4 json files.
 //4. api call
-//5. progress bar and status comp
+//5. progress bar and status comp V - need more design
 //6.summary page
 
 

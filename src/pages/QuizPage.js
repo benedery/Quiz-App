@@ -6,6 +6,7 @@ import {
     SET_VIEW_SUMMARY,
     WRONG_ANSWER
 } from "../actions/types";
+import Status from "../components/Status";
 
 const QuizPage = ({text, options, onNext, correctIndex, isLast, img}) => {
     function onClick(answerIndex) {
@@ -21,6 +22,7 @@ const QuizPage = ({text, options, onNext, correctIndex, isLast, img}) => {
     ));
     return (
         <div>
+            <Status/>
             <img src={img} alt="" className="quiz-img"/>
             <h3 className="text-shadow mb-5 text-uppercase">{text}</h3>
             <ul className="p-0">
