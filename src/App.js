@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {connect} from "react-redux";
+import WelcomePage from './pages/WelcomePage'
+import ChooseQuiz from "./pages/ChooseQuiz";
+import QuizPage from "./pages/QuizPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App({view}) {
+    // get active page: /welcome/ choose / quiz / summary
+    switch (view) {
+        case 'welcome':
+            view = <WelcomePage/>
+            break;
+        case 'quiz':
+            view = <QuizPage/>
+            break;
+        case 'choose':
+            view = <ChooseQuiz/>
+            break;
+        case 'summary':
+            view = <h1>summary</h1>
+            break;
+    }
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                {view}
+            </header>
+        </div>
+    );
 }
 
-export default App;
+
+const mapStateToProps = (state) => {
+    return {
+        view: state.pageView.view,
+    }
+};
+
+
+export default connect(mapStateToProps, null)(App);
+
+

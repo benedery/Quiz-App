@@ -1,0 +1,10 @@
+export const SET_VIEW_WELCOME = 'set_view_welcome';
+export const SET_VIEW_QUIZ = 'set_view_quiz';
+export const SET_VIEW_SUMMARY = 'set_view_summary';
+export const SET_USER_NAME= 'set_user_name';
+export const ADVANCE_CORRECT= 'advance_correct';
+export const ADVANCE_WRONG= 'advance_wrong';
+export const ADVANCE_QUESTION= 'advance_question';
+export const CORRECT_ANSWER= 'correct_answer';
+export const WRONG_ANSWER= 'wrong_answer';
+// export const SET_USER_NAME= 'set_user_name';
