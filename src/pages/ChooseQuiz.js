@@ -2,8 +2,9 @@ import React from 'react';
 import {connect} from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
 import '../App.css'
+import * as actionCreators from "../actions/actionCreators";
 
-const ChooseQuiz = ({name}) => {
+const ChooseQuiz = ({name, fetchQuiz}) => {
     return (
         <div>
             <div className="text-shadow">
@@ -12,7 +13,7 @@ const ChooseQuiz = ({name}) => {
                 <br/>
             </div>
             <Carousel>
-                <Carousel.Item>
+                <Carousel.Item onClick={() => fetchQuiz("sports")}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz2.jpg")}
@@ -68,8 +69,10 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = dispatch => {
-    return {}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchQuiz: (quiz) => dispatch(actionCreators.fetchingQuiz(quiz)),
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChooseQuiz);

@@ -1,5 +1,4 @@
 import React from "react";
-import {ADVANCE_QUESTION, CORRECT_ANSWER, SET_VIEW_SUMMARY, WRONG_ANSWER} from "../actions/types";
 import {connect} from "react-redux";
 import {Line} from 'rc-progress'
 const Status = ({correct,wrong,name,linePercent}) => {
@@ -25,21 +24,6 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    onNext: (answerIndex, correctIndex, isLast) => {
-        if (answerIndex === correctIndex) {
-            dispatch({type: CORRECT_ANSWER});
-        } else {
-            dispatch({type: WRONG_ANSWER});
-        }
-        if(isLast) {
-            dispatch({type:SET_VIEW_SUMMARY})
-        }
-        else{
-            dispatch({type:ADVANCE_QUESTION})
-        }
-    }
-});
 
 export default connect(mapStateToProps,
-    mapDispatchToProps)(Status);
+    null)(Status);

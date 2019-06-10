@@ -1,8 +1,6 @@
-
 import {
-    ADVANCE_CORRECT,
     ADVANCE_QUESTION,
-    CORRECT_ANSWER,
+    CORRECT_ANSWER, FETCH_ERROR, FETCH_SUCCESS, SET_QUIZ, SET_VIEW_LOADING,
     SET_VIEW_SUMMARY,
     SET_VIEW_WELCOME,
     WRONG_ANSWER
@@ -13,7 +11,7 @@ import {combineReducers} from "redux";
 
 const viewInitState = {
     name:'',
-    view:'quiz',
+    view:'choose',
     quiz: "",
     questions: [
         {
@@ -38,6 +36,7 @@ const viewInitState = {
     ],
     activeQuestion:0,
     linePercent: 25,
+    isLoading:false,
 
 }
 
@@ -67,6 +66,11 @@ const viewReducer = (state = viewInitState, action) =>{
                 ...state,
                 view:'summary'
             }
+        case SET_VIEW_LOADING:
+            return {
+                ...state,
+                view:'loading'
+            }
         case SET_USER_NAME:
             return {
                 ...state,
@@ -80,6 +84,24 @@ const viewReducer = (state = viewInitState, action) =>{
                 activeQuestion: state.activeQuestion + 1,
                 linePercent:state.linePercent + 25,
             }
+
+        case SET_QUIZ:
+            return {
+                ...state,
+                quiz:action.payload
+            }
+
+        case FETCH_SUCCESS:
+            return {
+                ...state,
+                questions: action.payload
+            }
+        case FETCH_ERROR:
+            return {
+                ...state,
+                view:'error'
+            }
+
     }
     return state;
 };
@@ -110,8 +132,8 @@ const rootReducer = combineReducers({
 
 
 // 1. create Combine Reducers - view + score v
-//git hub
-//2. set photo And design in question.
+//git hub V
+//2. set photo And design in question. V
 //3. make 4 json files.
 //4. api call
 //5. progress bar and status comp V - need more design

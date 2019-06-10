@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import WelcomePage from './pages/WelcomePage'
 import ChooseQuiz from "./pages/ChooseQuiz";
 import QuizPage from "./pages/QuizPage";
+import ReactLoading from 'react-loading';
 
 function App({view}) {
     // get active page: /welcome/ choose / quiz / summary
@@ -19,6 +20,11 @@ function App({view}) {
             break;
         case 'summary':
             view = <h1>summary</h1>
+            break;
+        case 'loading':
+            view = <div className="loading">
+                <ReactLoading className="text-center" type="spokes" height={100} width={100}/>
+            </div>
             break;
     }
 
