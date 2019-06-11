@@ -5,21 +5,22 @@ import WelcomePage from './pages/WelcomePage'
 import ChooseQuiz from "./pages/ChooseQuiz";
 import QuizPage from "./pages/QuizPage";
 import ReactLoading from 'react-loading';
+import SummaryPage from "./pages/SummaryPage";
 
 function App({view}) {
     // get active page: /welcome/ choose / quiz / summary
     switch (view) {
         case 'welcome':
-            view = <WelcomePage/>
+            view = <WelcomePage/>;
             break;
         case 'quiz':
-            view = <QuizPage/>
+            view = <QuizPage/>;
             break;
         case 'choose':
-            view = <ChooseQuiz/>
+            view = <ChooseQuiz/>;
             break;
         case 'summary':
-            view = <h1>summary</h1>
+            view = <SummaryPage/>;
             break;
         case 'loading':
             view = <div className="loading">

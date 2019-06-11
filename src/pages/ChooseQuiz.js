@@ -20,7 +20,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         alt="Third slide"
                     />
                     <Carousel.Caption className="text-shadow">
-                        <h3>Sports Quiz</h3>
+                        <h3 className="mb-lg-4">Sports Quiz</h3>
                         <p>Are You A Sport fan? Let's Check Your knowledge</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -31,7 +31,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         alt="First slide"
                     />
                     <Carousel.Caption className="text-shadow">
-                        <h3>Comic's Quiz</h3>
+                        <h3 className="mb-lg-4">Comic's Quiz</h3>
                         <p>Batman ? SuperMan? Or Maybe You?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -42,7 +42,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         alt="Third slide"
                     />
                     <Carousel.Caption className="text-shadow">
-                        <h3>History Quiz</h3>
+                        <h3 className="mb-lg-4">History Quiz</h3>
                         <p>How Good You Know History?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -58,7 +58,6 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-
         </div>
     )
 };
