@@ -10,12 +10,12 @@ import {SET_USER_NAME} from "../actions/types";
 import {combineReducers} from "redux";
 
 const viewInitState = {
-    name:'',
-    view:'choose',
+    name: '',
+    view: 'choose',
     quiz: "",
     questions: [
         {
-            img:require("../img/quiz1q1.jpeg"),
+            img: require("../img/quiz1q1.jpeg"),
             id: 'q1',
             text: 'The name of WHICH US state is thought to have been made up as the result of a hoax?',
             options: ['Iowa', 'Minnesota', 'Idaho', 'Michigan'],
@@ -34,62 +34,62 @@ const viewInitState = {
             correctIndex: 0
         }
     ],
-    activeQuestion:0,
-    activeImage:0,
+    activeQuestion: 0,
+    activeImage: 0,
     linePercent: 1,
-    isLoading:false,
+    isLoading: false,
 
 }
 
-const scoreInitState ={
-    correctAnswers:0,
-    wrongAnswers:0,
+const scoreInitState = {
+    correctAnswers: 0,
+    wrongAnswers: 0,
     topRanked: [],
 
 }
 
 
-
-const viewReducer = (state = viewInitState, action) =>{
+const viewReducer = (state = viewInitState, action) => {
     switch (action.type) {
         case SET_VIEW_WELCOME:
-        return {...state,
-        view:'welcome'
-        };
+            return {
+                ...state,
+                view: 'welcome'
+            };
         case SET_VIEW_QUIZ:
             return {
                 ...state,
-                view:'quiz'
+                view: 'quiz'
             };
 
         case SET_VIEW_SUMMARY:
             return {
                 ...state,
-                view:'summary'
+                view: 'summary'
             }
         case SET_VIEW_LOADING:
             return {
                 ...state,
-                view:'loading'
+                view: 'loading'
             }
         case SET_USER_NAME:
             return {
                 ...state,
-                name:action.payload,
-                view:'choose'
+                name: action.payload,
+                view: 'choose'
             };
 
         case ADVANCE_QUESTION:
             return {
                 ...state,
                 activeQuestion: state.activeQuestion + 1,
-                linePercent:state.linePercent + 25,
+                linePercent: state.linePercent + 25,
             }
 
         case SET_QUIZ:
             return {
                 ...state,
-                quiz:action.payload
+                quiz: action.payload
             }
 
         case FETCH_SUCCESS:
@@ -100,7 +100,7 @@ const viewReducer = (state = viewInitState, action) =>{
         case FETCH_ERROR:
             return {
                 ...state,
-                view:'error'
+                view: 'error'
             }
 
     }
@@ -108,8 +108,8 @@ const viewReducer = (state = viewInitState, action) =>{
 };
 
 
-const scoresReducer = (state=scoreInitState, action) =>{
-    switch (action.type){
+const scoresReducer = (state = scoreInitState, action) => {
+    switch (action.type) {
         case CORRECT_ANSWER:
             return {
                 ...state,
@@ -118,7 +118,7 @@ const scoresReducer = (state=scoreInitState, action) =>{
         case WRONG_ANSWER:
             return {
                 ...state,
-                wrongAnswers:state.wrongAnswers + 1,
+                wrongAnswers: state.wrongAnswers + 1,
             }
 
 
@@ -127,9 +127,9 @@ const scoresReducer = (state=scoreInitState, action) =>{
 }
 
 const rootReducer = combineReducers({
-        pageView: viewReducer,
-        scores: scoresReducer,
-    });
+    pageView: viewReducer,
+    scores: scoresReducer,
+});
 
 
 // 1. create Combine Reducers - view + score v
@@ -141,9 +141,7 @@ const rootReducer = combineReducers({
 //6.summary page
 
 
-
 export default rootReducer;
-
 
 
 // const initialState = {
