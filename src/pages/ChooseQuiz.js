@@ -24,7 +24,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         <p>Are You A Sport fan? Let's Check Your knowledge</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item onClick={() => fetchQuiz("comics")}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz1.jpg")}
@@ -35,7 +35,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         <p>Batman ? SuperMan? Or Maybe You?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item onClick={() => fetchQuiz("history")}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz3.jpeg")}
@@ -46,7 +46,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         <p>How Good You Know History?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item onClick={() => fetchQuiz("computer")}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz4.png")}

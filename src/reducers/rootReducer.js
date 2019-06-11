@@ -35,7 +35,8 @@ const viewInitState = {
         }
     ],
     activeQuestion:0,
-    linePercent: 25,
+    activeImage:0,
+    linePercent: 1,
     isLoading:false,
 
 }

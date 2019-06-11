@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q1",
+    "imgId":"quiz2q1",
+    "text": "Who was the first president of the United States?",
+    "options": [
+      "James Madison",
+      "Thomas Jefferson",
+      "James K. Polk",
+      "George Washington"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "q2",
+    "imgId":"quiz2q2",
+    "text": "Which of the following countries was not an axis power during World War II?",
+    "options": [
+      "Italy",
+      "Soviet Union",
+      "Germany",
+      "Japan"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "q3",
+    "imgId":"quiz2q3",
+    "text": "What year did World War I begin?",
+    "options": [
+      "1914",
+      "1905",
+      "1919",
+      "1925"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "q4",
+    "imgId":"quiz2q4",
+    "text": "Toussaint Louverture led a successful slave revolt in which country?",
+    "options": [
+      "France",
+      "Cuba",
+      "Haiti",
+      "United States"
+    ],
+    "correctIndex": 2
+  }
+]

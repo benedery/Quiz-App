@@ -8,9 +8,9 @@ import {
 } from "../actions/types";
 import Status from "../components/Status";
 
-const QuizPage = ({text, options, onNext, correctIndex, isLast, img}) => {
+const QuizPage = ({text, options, onNext, correctIndex, isLast, imgId}) => {
     function onClick(answerIndex) {
-        onNext(answerIndex, correctIndex,isLast);
+        onNext(answerIndex, correctIndex, isLast);
     }
 
     const optionalAnswers = options.map((q, i) => (
@@ -23,7 +23,7 @@ const QuizPage = ({text, options, onNext, correctIndex, isLast, img}) => {
     return (
         <div>
             <Status/>
-            <img src={img} alt="" className="quiz-img"/>
+            <img src={require(`../img/${imgId}.jpeg`)} alt="" className="quiz-img"/>
             <h3 className="text-shadow mb-5 text-uppercase">{text}</h3>
             <ul className="p-0">
                 {optionalAnswers}
@@ -41,7 +41,7 @@ const mapStateToProps = (state) => {
         text: activeQuestion.text,
         correctIndex: activeQuestion.correctIndex,
         isLast: state.pageView.activeQuestion === state.pageView.questions.length - 1,
-        img:activeQuestion.img,
+        imgId: activeQuestion.imgId,
     }
 };
 
@@ -52,11 +52,10 @@ const mapDispatchToProps = (dispatch) => ({
         } else {
             dispatch({type: WRONG_ANSWER});
         }
-        if(isLast) {
-            dispatch({type:SET_VIEW_SUMMARY})
-        }
-        else{
-            dispatch({type:ADVANCE_QUESTION})
+        if (isLast) {
+            dispatch({type: SET_VIEW_SUMMARY})
+        } else {
+            dispatch({type: ADVANCE_QUESTION})
         }
     }
 });

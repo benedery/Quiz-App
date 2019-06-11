@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q1",
+    "imgId":"quiz4q1",
+    "text": "What amount of bits commonly equals one byte?",
+    "options": [
+      "1",
+      "2",
+      "64",
+      "8"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "q2",
+    "imgId":"quiz4q2",
+    "text": "HTML is what type of language?",
+    "options": [
+      "Macro Language",
+      "Markup Language",
+      "Programming Language",
+      "Scripting Language"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "q3",
+    "imgId":"quiz4q3",
+    "text": "Which data structure does FILO apply to?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Heap",
+      "Tree"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "q4",
+    "imgId":"quiz4q4",
+    "text": "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
+    "options": [
+      "Java",
+      "C++",
+      "Objective-C",
+      "C#"
+    ],
+    "correctIndex": 3
+  }
+]

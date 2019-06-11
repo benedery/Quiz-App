@@ -46,7 +46,7 @@ export const fetchingQuiz = (quiz)=> {
                 }
                 console.log(res);
                 dispatch(fetchQuizSuccess(res));
-                dispatch({type:SET_VIEW_QUIZ})
+                dispatch({type:SET_VIEW_QUIZ});
                 return res
             })
             .catch(error => {
