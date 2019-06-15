@@ -9,6 +9,7 @@ import {SET_VIEW_QUIZ} from "../actions/types";
 import {SET_USER_NAME} from "../actions/types";
 import {combineReducers} from "redux";
 
+
 const viewInitState = {
     name: '',
     view: 'choose',

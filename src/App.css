@@ -39,6 +39,7 @@ padding: 30px;
   height: 100%;
   opacity: 0.5;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .text-shadow {
@@ -47,7 +48,7 @@ padding: 30px;
 
 .quiz-li {
   list-style: none;
-  background-color: #616161;
+  background-color: #757575;
   border:  black 0.05px solid;
   color: white;
   opacity: 0.9;
@@ -58,7 +59,7 @@ padding: 30px;
 }
 
 .quiz-li:hover {
-background-color: #D0ECFF;
+background-color: rgb(63, 199, 250);
 }
 
 .quiz-img {
