@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {useState} from 'react'
 import {setUserName} from "../actions/actionCreators";
+import {Link, withRouter} from "react-router-dom";
 import '../App.css'
 
 const WelcomePage = ({setNameStart}) => {
@@ -13,7 +14,9 @@ const WelcomePage = ({setNameStart}) => {
             <h5>Please Enter Your Name</h5>
             <input className="text-center p-lg-3 mb-5" placeholder="Enter you name" value={name} onChange={event => setName(event.target.value)}/>
             <br/>
+            <Link to="/quizselect">
             <button onClick={ ()=> setNameStart(name)}>Start Quiz</button>
+            </Link>
         </div>
     )
 };
@@ -24,4 +27,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(null,mapDispatchToProps)(WelcomePage);
+export default withRouter(connect(null,mapDispatchToProps)(WelcomePage));

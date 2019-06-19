@@ -34,7 +34,7 @@ export const fetchQuizError = (error) =>{
     }
 }
 
-export const fetchingQuiz = (quiz)=> {
+export const fetchingQuiz = (quiz,history)=> {
     return dispatch=> {
         dispatch(setViewLoading());
         dispatch(selectQuiz(quiz))
@@ -47,6 +47,8 @@ export const fetchingQuiz = (quiz)=> {
                 console.log(res);
                 dispatch(fetchQuizSuccess(res));
                 dispatch({type:SET_VIEW_QUIZ});
+                history.push(`/quiz/${quiz}`)
+                //redirect to quiz page
                 return res
             })
             .catch(error => {

@@ -3,8 +3,10 @@ import {connect} from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
 import '../App.css'
 import * as actionCreators from "../actions/actionCreators";
+import {withRouter, Route, Router} from "react-router-dom";
+import QuizPage from "./QuizPage";
 
-const ChooseQuiz = ({name, fetchQuiz}) => {
+const ChooseQuiz = ({name, fetchQuiz, history}) => {
     return (
         <div>
             <div className="text-shadow">
@@ -13,7 +15,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                 <br/>
             </div>
             <Carousel>
-                <Carousel.Item onClick={() => fetchQuiz("sports")}>
+                <Carousel.Item onClick={() => fetchQuiz("sports", history)}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz2.jpg")}
@@ -24,7 +26,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         <p>Are You A Sport fan? Let's Check Your knowledge</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item onClick={() => fetchQuiz("comics")}>
+                <Carousel.Item onClick={() => fetchQuiz("comics", history)}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz1.jpg")}
@@ -35,7 +37,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         <p>Batman ? SuperMan? Or Maybe You?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item onClick={() => fetchQuiz("history")}>
+                <Carousel.Item onClick={() => fetchQuiz("history", history)}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz3.jpeg")}
@@ -46,7 +48,7 @@ const ChooseQuiz = ({name, fetchQuiz}) => {
                         <p>How Good You Know History?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item onClick={() => fetchQuiz("computer")}>
+                <Carousel.Item onClick={() => fetchQuiz("computer", history)}>
                     <img
                         className="d-block img-carousel"
                         src={require("../img/cQuiz4.png")}
@@ -70,8 +72,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchQuiz: (quiz) => dispatch(actionCreators.fetchingQuiz(quiz)),
+        fetchQuiz: (quiz, history) => dispatch(actionCreators.fetchingQuiz(quiz, history))
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChooseQuiz);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChooseQuiz));

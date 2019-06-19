@@ -1,4 +1,5 @@
 import {
+    ADD_LINE_PERCENT,
     ADVANCE_QUESTION,
     CORRECT_ANSWER, FETCH_ERROR, FETCH_SUCCESS, SET_QUIZ, SET_VIEW_LOADING,
     SET_VIEW_SUMMARY,
@@ -9,10 +10,9 @@ import {SET_VIEW_QUIZ} from "../actions/types";
 import {SET_USER_NAME} from "../actions/types";
 import {combineReducers} from "redux";
 
-
 const viewInitState = {
     name: '',
-    view: 'choose',
+    view: 'welcome',
     quiz: "",
     questions: [],
     activeQuestion: 0,
@@ -25,10 +25,9 @@ const viewInitState = {
 const scoreInitState = {
     correctAnswers: 0,
     wrongAnswers: 0,
-    topRanked: [],
+    lastResults: [],
 
 }
-
 
 const viewReducer = (state = viewInitState, action) => {
     switch (action.type) {
@@ -59,7 +58,11 @@ const viewReducer = (state = viewInitState, action) => {
                 name: action.payload,
                 view: 'choose'
             };
-
+        case ADD_LINE_PERCENT:
+            return {
+            ...state,
+                linePercent: state.linePercent + 25,
+            }
         case ADVANCE_QUESTION:
             return {
                 ...state,
@@ -101,8 +104,6 @@ const scoresReducer = (state = scoreInitState, action) => {
                 ...state,
                 wrongAnswers: state.wrongAnswers + 1,
             }
-
-
     }
     return state;
 }
@@ -112,45 +113,4 @@ const rootReducer = combineReducers({
     scores: scoresReducer,
 });
 
-
-// 1. create Combine Reducers - view + score v
-//git hub V
-//2. set photo And design in question. V
-//3. make 4 json files.
-//4. api call
-//5. progress bar and status comp V - need more design
-//6.summary page
-
-
 export default rootReducer;
-
-
-// const initialState = {
-//     name:'',
-//     view:'quiz',
-//     correctAnswers:0,
-//     wrongAnswers:0,
-//     topRanked: [],
-//     question: [
-//         {
-//             id: 'q1',
-//             text: 'The name of WHICH US state is thought to have been made up as the result of a hoax?',
-//             options: ['Iowa', 'Minnesota', 'Idaho', 'Michigan'],
-//             correctIndex: 2
-//         },
-//         {
-//             id: 'q2',
-//             text: 'The capital of Cuba is which of the following?',
-//             options: ['Guantanamo Bay', 'Tijuana', 'San Jose', 'Havana'],
-//             correctIndex: 3
-//         },
-//         {
-//             id: 'q3',
-//             text: 'Aside from Denmark, Danish is the official language of WHICH other country?',
-//             options: ['Greenland', 'Germany', 'Iceland', 'Finland'],
-//             correctIndex: 0
-//         }
-//     ],
-//     quiz: "",
-//     activeQuestion:0,
-// };
