@@ -57,9 +57,8 @@ const mapDispatchToProps = (dispatch) => ({
             dispatch({type: WRONG_ANSWER});
         }
         if (isLast) {
-            dispatch({type:ADD_LINE_PERCENT})
+            dispatch({type:ADD_LINE_PERCENT});
             history.push("/summary")
-            // need to add progress bar 25
         } else {
             dispatch({type: ADVANCE_QUESTION})
             history.push(`/quiz/${quizName}/${activeQuestion + 1}`)

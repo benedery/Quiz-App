@@ -4,6 +4,7 @@ import {useState} from 'react'
 import {setUserName} from "../actions/actionCreators";
 import {Link, withRouter} from "react-router-dom";
 import '../App.css'
+import Button from "react-bootstrap/Button";
 
 const WelcomePage = ({setNameStart}) => {
     const [name, setName] = useState("");
@@ -15,7 +16,7 @@ const WelcomePage = ({setNameStart}) => {
             <input className="text-center p-lg-3 mb-5" placeholder="Enter you name" value={name} onChange={event => setName(event.target.value)}/>
             <br/>
             <Link to="/quizselect">
-            <button onClick={ ()=> setNameStart(name)}>Start Quiz</button>
+            <Button variant="primary"  onClick={ ()=> setNameStart(name)}>Start Quiz</Button>
             </Link>
         </div>
     )
