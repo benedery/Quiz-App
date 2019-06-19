@@ -19,14 +19,12 @@ const viewInitState = {
     activeImage: 0,
     linePercent: 1,
     isLoading: false,
-
 }
 
 const scoreInitState = {
     correctAnswers: 0,
     wrongAnswers: 0,
     lastResults: [],
-
 }
 
 const viewReducer = (state = viewInitState, action) => {

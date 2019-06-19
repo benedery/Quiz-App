@@ -1,9 +1,10 @@
 import {FETCH_ERROR, FETCH_SUCCESS, SET_QUIZ, SET_USER_NAME, SET_VIEW_LOADING, SET_VIEW_QUIZ} from "./types";
 
 export const setUserName = (name) => {
+    let newName = name.toUpperCase()
     return {
         type: SET_USER_NAME,
-        payload: name
+        payload: newName
     }
 };
 
@@ -56,3 +57,5 @@ export const fetchingQuiz = (quiz,history)=> {
             })
     }
 };
+
+// export const
