@@ -43,6 +43,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchQuiz: (quiz) => dispatch(actionCreators.fetchingQuiz(quiz)),
+        redoQuiz:
     }
 };
 

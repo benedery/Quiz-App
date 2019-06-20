@@ -49,7 +49,6 @@ export const fetchingQuiz = (quiz,history)=> {
                 dispatch(fetchQuizSuccess(res));
                 dispatch({type:SET_VIEW_QUIZ});
                 history.push(`/quiz/${quiz}`)
-                //redirect to quiz page
                 return res
             })
             .catch(error => {
@@ -58,4 +57,3 @@ export const fetchingQuiz = (quiz,history)=> {
     }
 };
 
-// export const

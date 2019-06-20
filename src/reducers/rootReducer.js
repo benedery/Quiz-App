@@ -84,7 +84,6 @@ const viewReducer = (state = viewInitState, action) => {
                 ...state,
                 view: 'error'
             }
-
     }
     return state;
 };

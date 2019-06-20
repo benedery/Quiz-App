@@ -3,8 +3,7 @@ import {connect} from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
 import '../App.css'
 import * as actionCreators from "../actions/actionCreators";
-import {withRouter, Route, Router} from "react-router-dom";
-import QuizPage from "./QuizPage";
+import {withRouter} from "react-router-dom";
 
 const ChooseQuiz = ({name, fetchQuiz, history}) => {
     return (
