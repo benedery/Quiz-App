@@ -10,5 +10,8 @@ export const WRONG_ANSWER= 'wrong_answer';
 export const SET_QUIZ= 'set_quiz';
 export const FETCH_SUCCESS= 'fetch_success';
 export const FETCH_ERROR= 'fetch_error';
+export const RESET_SCORES = 'reset_scores';
+export const REDO_QUIZ = 'redo_quiz';
+export const RESET_QUIZ = 'reset_quiz';
 
 // export const SET_USER_NAME= 'set_user_name';

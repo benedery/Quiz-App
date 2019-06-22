@@ -64,6 +64,7 @@ background-color: rgb(63, 199, 250);
 
 .quiz-img {
   width: 100%;
+  max-height: 370px;
   margin-bottom: 20px;
   border-radius: 10px;
 }
