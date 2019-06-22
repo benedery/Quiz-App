@@ -1,4 +1,12 @@
-import {FETCH_ERROR, FETCH_SUCCESS, SET_QUIZ, SET_USER_NAME, SET_VIEW_LOADING, SET_VIEW_QUIZ} from "./types";
+import {
+    FETCH_ERROR,
+    FETCH_SUCCESS, REDO_QUIZ, RESET_QUIZ,
+    RESET_SCORES,
+    SET_QUIZ,
+    SET_USER_NAME,
+    SET_VIEW_LOADING,
+    SET_VIEW_QUIZ
+} from "./types";
 
 export const setUserName = (name) => {
     let newName = name.toUpperCase()
@@ -57,3 +65,44 @@ export const fetchingQuiz = (quiz,history)=> {
     }
 };
 
+export const resetScoresAction = () => {
+    return {
+        type:RESET_SCORES
+    }
+};
+
+export const redoQuizAction = () =>{
+    return {
+        type:REDO_QUIZ
+    }
+};
+
+export const resetQuizAction = () => {
+    return {
+        type:RESET_QUIZ
+    }
+};
+
+export const summaryRedoQuiz = (history,quizName) => {
+    return dispatch => {
+        dispatch(resetScoresAction());
+        dispatch(redoQuizAction());
+        history.push(`/quiz/${quizName}`);
+    }
+};
+
+export const summarySelectQuiz = (history) => {
+    return dispatch => {
+        dispatch(resetScoresAction());
+        dispatch(resetQuizAction());
+        history.push(`/quizselect`)
+    }
+};
+
+export const summaryNewPlayer = (history)=> {
+    return dispatch =>{
+        dispatch(resetScoresAction());
+        dispatch(resetQuizAction());
+        history.push(`/`);
+    }
+};

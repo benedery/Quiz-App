@@ -7,6 +7,7 @@ import QuizPage from "./pages/QuizPage";
 import ReactLoading from 'react-loading';
 import SummaryPage from "./pages/SummaryPage";
 import {Route, Switch} from "react-router-dom";
+import AppNavBar from './components/appNavBar'
 
 const Routes = ({quizName, activeQuestion}) => {
     return (
@@ -24,13 +25,6 @@ const Routes = ({quizName, activeQuestion}) => {
 };
 
 function App({view}) {
-//     switch (view) {
-//         case 'loading':
-//             view = <div className="loading">
-//                 <ReactLoading className="text-center" type="spokes" height={100} width={100}/>
-//             </div>
-//             break;
-//     }
 if (view === 'loading') {
     return (
         <div className="App">
@@ -44,10 +38,13 @@ if (view === 'loading') {
 }
 else
 return (
+    <div>
+        <AppNavBar />
     <div className="App">
         <header className="App-header">
             <Routes/>
         </header>
+    </div>
     </div>
 )
 }

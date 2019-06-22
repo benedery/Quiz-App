@@ -1,7 +1,7 @@
 import {
     ADD_LINE_PERCENT,
     ADVANCE_QUESTION,
-    CORRECT_ANSWER, FETCH_ERROR, FETCH_SUCCESS, SET_QUIZ, SET_VIEW_LOADING,
+    CORRECT_ANSWER, FETCH_ERROR, FETCH_SUCCESS, REDO_QUIZ, RESET_QUIZ, RESET_SCORES, SET_QUIZ, SET_VIEW_LOADING,
     SET_VIEW_SUMMARY,
     SET_VIEW_WELCOME,
     WRONG_ANSWER
@@ -84,6 +84,23 @@ const viewReducer = (state = viewInitState, action) => {
                 ...state,
                 view: 'error'
             }
+
+        case REDO_QUIZ:
+            return {
+                ...state,
+                activeQuestion: 0,
+                activeImage: 0,
+                linePercent: 1,
+            };
+
+        case RESET_QUIZ:
+            return {
+                ...state,
+                quiz: "",
+                activeQuestion: 0,
+                activeImage: 0,
+                linePercent: 1,
+            }
     }
     return state;
 };
@@ -100,6 +117,10 @@ const scoresReducer = (state = scoreInitState, action) => {
             return {
                 ...state,
                 wrongAnswers: state.wrongAnswers + 1,
+            }
+        case RESET_SCORES:
+            return {
+                ...scoreInitState
             }
     }
     return state;

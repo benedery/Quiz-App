@@ -6,9 +6,9 @@ import {Link, withRouter} from "react-router-dom";
 import '../App.css'
 import Button from "react-bootstrap/Button";
 
+
 const WelcomePage = ({setNameStart}) => {
     const [name, setName] = useState("");
-
     return(
         <div className="welcome-page-main text-shadow text-center">
             <h1>Welcome To QuizApp</h1>
