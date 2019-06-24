@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {useState} from 'react'
 import {setUserName} from "../actions/actionCreators";
 import {Link, withRouter} from "react-router-dom";
-import '../App.css'
+import '../App.scss'
 import Button from "react-bootstrap/Button";
 
 const WelcomePage = ({setNameStart, history}) => {

@@ -1,0 +1,40 @@
+@import "../styles/variables";
+
+.summary-container {
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+  font-size: 1.8rem;
+  .summary-yellow {
+    color: $yellow;
+  }
+  .summary-answered {
+    span{
+      color:$yellow;
+    }
+  }
+  .summary-correct {
+    span {
+      color: $correctAnswerColor;
+    }
+  }
+  .summary-wrong {
+    span {
+      color: $wrongAnswerColor;
+    }
+  }
+}
+
+.summary-btnGroup {
+  width: 400px;
+  height: 50px;
+
+  Button {
+    border: 1px solid $secondaryColor;
+  }
+}
+
+.summary-container > * {
+  margin: 25px 0;
+  font-family: "Helvetica Neue","Helvetica","sans-serif";
+  text-shadow: 2px 2px 4px #000000;
+}

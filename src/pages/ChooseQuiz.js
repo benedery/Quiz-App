@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
-import '../App.css'
+import '../App.scss'
 import * as actionCreators from "../actions/actionCreators";
 import {withRouter} from "react-router-dom";
 
