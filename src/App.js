@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import {connect} from "react-redux";
 import WelcomePage from './pages/WelcomePage'
 import ChooseQuiz from "./pages/ChooseQuiz";
