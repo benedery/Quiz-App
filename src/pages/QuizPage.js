@@ -1,12 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {
-    ADD_LINE_PERCENT,
-    ADVANCE_QUESTION,
-    CORRECT_ANSWER,
-    SET_VIEW_SUMMARY,
-    WRONG_ANSWER
-} from "../actions/types";
+import {ADD_LINE_PERCENT, ADVANCE_QUESTION, CORRECT_ANSWER, WRONG_ANSWER} from "../actions/types";
 import Status from "../components/Status";
 import {withRouter} from "react-router-dom";
 

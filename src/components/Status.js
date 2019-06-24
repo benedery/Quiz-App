@@ -14,8 +14,6 @@ const Status = ({correct, wrong, name, linePercent}) => {
 };
 
 const mapStateToProps = (state) => {
-    const questions = state.pageView.questions;
-    const activeQuestion = state.pageView.questions[state.pageView.activeQuestion];
     return {
         correct: state.scores.correctAnswers,
         wrong: state.scores.wrongAnswers,

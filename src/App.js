@@ -7,7 +7,7 @@ import QuizPage from "./pages/QuizPage";
 import ReactLoading from 'react-loading';
 import SummaryPage from "./pages/SummaryPage";
 import {Route, Switch} from "react-router-dom";
-import AppNavBar from './components/appNavBar'
+import AppNavBar from './components/AppNavBar'
 
 const Routes = ({quizName, activeQuestion}) => {
     return (

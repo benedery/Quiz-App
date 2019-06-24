@@ -6,17 +6,29 @@ import {Link, withRouter} from "react-router-dom";
 import '../App.css'
 import Button from "react-bootstrap/Button";
 
-
-const WelcomePage = ({setNameStart}) => {
+const WelcomePage = ({setNameStart, history}) => {
     const [name, setName] = useState("");
-    return(
+    //Handle 'Enter' key press
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            setNameStart(name)
+            history.push("/quizselect");
+        }
+    };
+
+    return (
         <div className="welcome-page-main text-shadow text-center">
             <h1>Welcome To QuizApp</h1>
             <h5>Please Enter Your Name</h5>
-            <input className="text-center p-lg-3 mb-5" placeholder="Enter you name" value={name} onChange={event => setName(event.target.value)}/>
+            <input className="text-center p-lg-3 mb-5"
+                   placeholder="Enter you name"
+                   value={name}
+                   onChange={event => setName(event.target.value)}
+                   onKeyPress={(e) => handleKeyPress(e)}
+            />
             <br/>
             <Link to="/quizselect">
-            <Button variant="primary"  onClick={ ()=> setNameStart(name)}>Start Quiz</Button>
+                <Button variant="primary" onClick={() => setNameStart(name)}>Start Quiz</Button>
             </Link>
         </div>
     )
@@ -28,4 +40,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default withRouter(connect(null,mapDispatchToProps)(WelcomePage));
+export default withRouter(connect(null, mapDispatchToProps)(WelcomePage));
