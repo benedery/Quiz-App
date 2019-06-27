@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 const AppNavBar = ({history, newPlayerHandler, selectQuizBtnHandler}) => {
     return (
         <Navbar sticky="top" bg="dark" variant="dark">
-            <Navbar.Brand>Quiz App</Navbar.Brand>
+            <Navbar.Brand><h3 className="navBar-brand">Quiz App</h3></Navbar.Brand>
             <Nav className="mr-5">
                 <Button className="mr-3" onClick={() => newPlayerHandler(history)}>New Player</Button>
                 <Button onClick={() => selectQuizBtnHandler(history)}>Select Quiz</Button>
@@ -22,8 +22,8 @@ const AppNavBar = ({history, newPlayerHandler, selectQuizBtnHandler}) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        selectQuizBtnHandler: (history) => dispatch(actionCreators.summarySelectQuiz(history)),
-        newPlayerHandler: (history) => dispatch(actionCreators.summaryNewPlayer(history))
+        selectQuizBtnHandler: (history) => dispatch(actionCreators.navBarSelectQuiz(history)),
+        newPlayerHandler: (history) => dispatch(actionCreators.navBarNewPlayer(history))
     }
 };
 
