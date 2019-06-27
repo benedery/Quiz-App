@@ -5,7 +5,7 @@ import {
     SET_QUIZ,
     SET_USER_NAME,
     SET_VIEW_LOADING,
-    SET_VIEW_QUIZ
+    SET_VIEW_QUIZ, SUMMARYPAGE_MODE_TOGGLE
 } from "./types";
 
 export const setUserName = (name) => {
@@ -45,6 +45,8 @@ export const fetchQuizError = (error) =>{
 
 export const fetchingQuiz = (quiz,history)=> {
     return dispatch=> {
+        dispatch(resetScoresAction());
+        dispatch(resetQuizAction());
         dispatch(setViewLoading());
         dispatch(selectQuiz(quiz))
         fetch(`https://quizapp-366dc.firebaseio.com/quiz/${quiz}.json`)
@@ -83,8 +85,15 @@ export const resetQuizAction = () => {
     }
 };
 
+export const summaryPageModeAction = () => {
+    return {
+        type:SUMMARYPAGE_MODE_TOGGLE
+    }
+};
+
 export const summaryRedoQuiz = (history,quizName) => {
     return dispatch => {
+        dispatch(summaryPageModeAction());
         dispatch(resetScoresAction());
         dispatch(redoQuizAction());
         history.push(`/quiz/${quizName}`);
@@ -93,6 +102,7 @@ export const summaryRedoQuiz = (history,quizName) => {
 
 export const summarySelectQuiz = (history) => {
     return dispatch => {
+        dispatch(summaryPageModeAction());
         dispatch(resetScoresAction());
         dispatch(resetQuizAction());
         history.push(`/quizselect`)
@@ -100,6 +110,23 @@ export const summarySelectQuiz = (history) => {
 };
 
 export const summaryNewPlayer = (history)=> {
+    return dispatch =>{
+        dispatch(summaryPageModeAction());
+        dispatch(resetScoresAction());
+        dispatch(resetQuizAction());
+        history.push(`/`);
+    }
+};
+
+export const navBarSelectQuiz = (history) => {
+    return dispatch => {
+        dispatch(resetScoresAction());
+        dispatch(resetQuizAction());
+        history.push(`/quizselect`)
+    }
+};
+
+export const navBarNewPlayer = (history)=> {
     return dispatch =>{
         dispatch(resetScoresAction());
         dispatch(resetQuizAction());

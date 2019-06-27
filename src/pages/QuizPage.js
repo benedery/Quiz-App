@@ -1,10 +1,18 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {ADD_LINE_PERCENT, ADVANCE_QUESTION, CORRECT_ANSWER, WRONG_ANSWER} from "../actions/types";
+import {
+    ADD_LINE_PERCENT,
+    ADVANCE_QUESTION,
+    CORRECT_ANSWER,
+    SUMMARYPAGE_MODE_TOGGLE,
+    WRONG_ANSWER
+} from "../actions/types";
 import Status from "../components/Status";
 import {withRouter} from "react-router-dom";
 
-const QuizPage = ({text, options, onNext, correctIndex, isLast, imgId, history, quizName, activeQuestion}) => {
+const QuizPage = ({text, options, onNext, correctIndex,
+                      isLast, imgId, history, quizName,
+                      activeQuestion}) => {
     function onClick(answerIndex) {
         onNext(answerIndex, correctIndex, isLast, history, quizName, activeQuestion);
     }
@@ -51,11 +59,11 @@ const mapDispatchToProps = (dispatch) => ({
             dispatch({type: WRONG_ANSWER});
         }
         if (isLast) {
+            dispatch({type:SUMMARYPAGE_MODE_TOGGLE});
             dispatch({type:ADD_LINE_PERCENT});
             history.push("/summary")
         } else {
             dispatch({type: ADVANCE_QUESTION})
-            history.push(`/quiz/${quizName}/${activeQuestion + 1}`)
         }
     }
 });

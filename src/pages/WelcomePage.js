@@ -19,16 +19,16 @@ const WelcomePage = ({setNameStart, history}) => {
     return (
         <div className="welcome-page-main text-shadow text-center">
             <h1>Welcome To QuizApp</h1>
-            <h5>Please Enter Your Name</h5>
+            <h5 className="mb-4">Let's Check Your Knowledge</h5>
             <input className="text-center p-lg-3 mb-5"
-                   placeholder="Enter you name"
+                   placeholder="Enter Your Name"
                    value={name}
                    onChange={event => setName(event.target.value)}
                    onKeyPress={(e) => handleKeyPress(e)}
             />
             <br/>
             <Link to="/quizselect">
-                <Button variant="primary" onClick={() => setNameStart(name)}>Start Quiz</Button>
+                <Button className="welcome-page-btn" variant="primary" onClick={() => setNameStart(name)}>Start Quiz</Button>
             </Link>
         </div>
     )
