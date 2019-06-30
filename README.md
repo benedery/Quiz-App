@@ -25,9 +25,9 @@ Also Using Firebase servers for fetching data.
 5.After user answered all questions
 
 
-*a summary of results is presented
+- a summary of results is presented
 
-*User can choose to redo quiz / select different quiz / New user Select
+- User can choose to redo quiz / select different quiz / New user Select
 
 ## Usage
 1.Run `git clone https://github.com/benedery/Quiz-App.git`
