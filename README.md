@@ -26,6 +26,7 @@ Also Using Firebase servers for fetching data.
 
 
 *a summary of results is presented
+
 *User can choose to redo quiz / select different quiz / New user Select
 
 ## Usage
