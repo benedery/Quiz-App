@@ -1,18 +1,30 @@
 ## Quiz-App 
 ## About The Project && Dependencies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Project uses, React, Redux,React-Router, Redux-Thunk,React Bootstrap,MATERIAL-UI.
+Project uses, React, Redux,
+
+React-Router, Redux-Thunk,
+
+React Bootstrap,MATERIAL-UI.
+
 This Project using localStorage Api.
+
 Also Using Firebase servers for fetching data.
 
 
 ## Flow
 
 1.User Enter his name
+
 2.User select a quiz from a list
+
 3.First question presented for the selected quiz
+
 4.User select click an answer to go next question
+
 5.After user answered all questions
+
+
 *a summary of results is presented
 *User can choose to redo quiz / select different quiz / New user Select
 
