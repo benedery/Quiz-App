@@ -19,20 +19,20 @@ const SummaryPage = ({
             <div className="summary-container">
                 <Line percent={linePercent} strokeWidth="4" strokeColor="#3FC7FA"
                       trailColor="#878787"/>
-                <h1>Well Done, {name}! <span className="summary-yellow"><FontAwesomeIcon icon={faCrown}/></span></h1>
+                <h1 className="font-weight-bold">Well Done, {name}! <span className="summary-yellow"><FontAwesomeIcon icon={faCrown}/></span></h1>
                 <h2>You Completed The <br/><span className="summary-yellow">{quizName.toUpperCase()}</span> Quiz</h2>
                 <h3 className="summary-answered">You Answered <span>4</span> Question's <span><FontAwesomeIcon
                     icon={faQuestionCircle}/></span>
                 </h3>
-                <h3 className="summary-correct">You Have <span>{correct} Correct</span> Answer's <span><FontAwesomeIcon
+                <h3 className="summary-correct">You Have <span className="font-weight-bold">{correct} Correct</span> Answer's <span><FontAwesomeIcon
                     icon={faCheckCircle}/></span></h3>
-                <h3 className="summary-wrong">You Have <span>{wrong} Wrong</span> Answer's <span><FontAwesomeIcon
+                <h3 className="summary-wrong">You Have <span className="font-weight-bold">{wrong} Wrong</span> Answer's <span><FontAwesomeIcon
                     icon={faTimesCircle}/></span></h3>
             </div>
             <ButtonGroup className="summary-btnGroup">
-                <Button  onClick={() => redoQuizBtnHandler(history, quizName)}>Redo Quiz</Button>
-                <Button onClick={() => selectQuizBtnHandler(history)}>Select Quiz</Button>
-                <Button onClick={() => newPlayerHandler(history)}>New Player</Button>
+                <Button className="font-weight-bold" onClick={() => redoQuizBtnHandler(history, quizName)}>Redo Quiz</Button>
+                <Button className="font-weight-bold" onClick={() => selectQuizBtnHandler(history)}>Select Quiz</Button>
+                <Button className="font-weight-bold" onClick={() => newPlayerHandler(history)}>New Player</Button>
             </ButtonGroup>
         </div>
     )

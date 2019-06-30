@@ -26,7 +26,6 @@
   background: rgba(250, 250, 250, 0.8);
   box-shadow: 1px 3px 3px 3px #000000;
   margin-bottom: 20px;
-
 }
 
 .App-link {
@@ -59,10 +58,12 @@ padding: 30px;
   font-size: 1.4rem;
   font-weight: 500;
   margin: 13px;
+  cursor: pointer;
 }
 
 .quiz-li:hover {
-background-color: rgb(63, 199, 250);
+  background-color: $btnColor;
+  transform: scale(1.03);
 }
 
 .quiz-img {
@@ -86,3 +87,9 @@ background-color: rgb(63, 199, 250);
   height: 60px;
 }
 
+.message-txt {
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 2px black, 0 0 15px blue, 0 0 3px darkblue;
+}

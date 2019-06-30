@@ -4,7 +4,7 @@ import {Line} from 'rc-progress'
 
 const Status = ({correct, wrong, name, linePercent}) => {
     return (
-        <div>
+        <div className="font-weight-bold">
             <h4 className="text-shadow">Progress Bar</h4>
             <Line percent={linePercent} strokeWidth="4" strokeColor="#3FC7FA"
                   trailColor="#878787"/>

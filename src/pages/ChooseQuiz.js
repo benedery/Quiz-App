@@ -9,7 +9,7 @@ const ChooseQuiz = ({name, fetchQuiz, history}) => {
     return (
         <div>
             <div className="text-shadow">
-                <h1>Hey {name}</h1>
+                <h1 className="font-weight-bold">Hey {name}</h1>
                 <h5>Good Luck, Please Choose A Quiz</h5>
                 <br/>
             </div>
@@ -22,7 +22,7 @@ const ChooseQuiz = ({name, fetchQuiz, history}) => {
                     />
                     <Carousel.Caption className="text-shadow">
                         <h3 className="mb-lg-4">Sports Quiz</h3>
-                        <p>Are You A Sport fan? Let's Check Your knowledge</p>
+                        <p className="font-weight-bold">Are You A Sport fan? Let's Check Your knowledge</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item onClick={() => fetchQuiz("comics", history)}>
@@ -33,7 +33,7 @@ const ChooseQuiz = ({name, fetchQuiz, history}) => {
                     />
                     <Carousel.Caption className="text-shadow">
                         <h3 className="mb-lg-4">Comic's Quiz</h3>
-                        <p>Batman ? SuperMan? Or Maybe You?</p>
+                        <p className="font-weight-bold">Batman ? SuperMan? Or Maybe You?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item onClick={() => fetchQuiz("history", history)}>
@@ -44,7 +44,7 @@ const ChooseQuiz = ({name, fetchQuiz, history}) => {
                     />
                     <Carousel.Caption className="text-shadow">
                         <h3 className="mb-lg-4">History Quiz</h3>
-                        <p>How Good You Know History?</p>
+                        <p className="font-weight-bold">How Good You Know History?</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item onClick={() => fetchQuiz("computer", history)}>
@@ -55,7 +55,7 @@ const ChooseQuiz = ({name, fetchQuiz, history}) => {
                     />
                     <Carousel.Caption className="text-shadow">
                         <h3>Computer Science Quiz</h3>
-                        <p>Dreaming About Being A Developer?Check Your Skills</p>
+                        <p className="font-weight-bold">Dreaming About Being A Developer?Check Your Skills</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
