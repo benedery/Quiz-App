@@ -13,16 +13,16 @@ const scoresReducer = (state = scoreInitState, action) => {
             return {
                 ...state,
                 correctAnswers: state.correctAnswers + 1,
-            }
+            };
         case WRONG_ANSWER:
             return {
                 ...state,
                 wrongAnswers: state.wrongAnswers + 1,
-            }
+            };
         case RESET_SCORES:
             return {
                 ...scoreInitState
-            }
+            };
         default:
             return state;
     }

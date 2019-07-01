@@ -25,5 +25,4 @@ describe('<App/>', () => {
     it('should render Routes as default', () => {
         expect((wrapper).find(Routes)).toHaveLength(1);
     })
-
 });

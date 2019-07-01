@@ -52,7 +52,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    onNext: (answerIndex, correctIndex, isLast, history,quizName, activeQuestion) => {
+    onNext: (answerIndex, correctIndex, isLast, history) => {
         if (answerIndex === correctIndex) {
             dispatch({type: CORRECT_ANSWER});
         } else {

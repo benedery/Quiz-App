@@ -22,7 +22,7 @@ const viewReducer = (state = viewInitState, action) => {
             return {
                 ...state,
                 view: 'loading'
-            }
+            };
         case SET_VIEW_QUIZ:
             return {
                 ...state,
@@ -79,7 +79,7 @@ const viewReducer = (state = viewInitState, action) => {
             return {
                 ...state,
                 summaryPageMode: !state.summaryPageMode,
-            }
+            };
         default:
             return state;
     }

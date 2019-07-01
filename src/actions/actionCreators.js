@@ -8,6 +8,7 @@ import {
     SET_VIEW_QUIZ, SUMMARYPAGE_MODE_TOGGLE
 } from "./types";
 
+// UpperCase user input and Set user name
 export const setUserName = (name) => {
     let newName = name.toUpperCase()
     return {
@@ -15,6 +16,7 @@ export const setUserName = (name) => {
         payload: newName
     }
 };
+
 
 export const selectQuiz = (quiz) => {
     return {
@@ -34,15 +36,16 @@ export const fetchQuizSuccess = (questions) => {
         type:FETCH_SUCCESS,
         payload:questions
     }
-}
+};
 
 export const fetchQuizError = (error) =>{
     return {
         type:FETCH_ERROR,
         payload:error
     }
-}
+};
 
+//reset all scores and set view to loading and starting fetching quiz
 export const fetchingQuiz = (quiz,history)=> {
     return dispatch=> {
         dispatch(resetScoresAction());
@@ -85,12 +88,14 @@ export const resetQuizAction = () => {
     }
 };
 
+// enable summary page mode for end Case when user trying go back from summary page.
 export const summaryPageModeAction = () => {
     return {
         type:SUMMARYPAGE_MODE_TOGGLE
     }
 };
 
+// redo quiz from (called from summary page)
 export const summaryRedoQuiz = (history,quizName) => {
     return dispatch => {
         dispatch(summaryPageModeAction());
@@ -99,7 +104,7 @@ export const summaryRedoQuiz = (history,quizName) => {
         history.push(`/quiz/${quizName}`);
     }
 };
-
+//select another quiz (called from summary page)
 export const summarySelectQuiz = (history) => {
     return dispatch => {
         dispatch(summaryPageModeAction());
@@ -108,7 +113,7 @@ export const summarySelectQuiz = (history) => {
         history.push(`/quizselect`)
     }
 };
-
+//new player game (called from summary page)
 export const summaryNewPlayer = (history)=> {
     return dispatch =>{
         dispatch(summaryPageModeAction());
@@ -117,7 +122,7 @@ export const summaryNewPlayer = (history)=> {
         history.push(`/`);
     }
 };
-
+// select another quiz (called from navBar)
 export const navBarSelectQuiz = (history) => {
     return dispatch => {
         dispatch(resetScoresAction());
@@ -125,7 +130,7 @@ export const navBarSelectQuiz = (history) => {
         history.push(`/quizselect`)
     }
 };
-
+//new player game (call from navBar)
 export const navBarNewPlayer = (history)=> {
     return dispatch =>{
         dispatch(resetScoresAction());

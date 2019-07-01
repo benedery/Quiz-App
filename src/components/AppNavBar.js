@@ -21,7 +21,7 @@ const AppNavBar = ({history, newPlayerHandler, selectQuizBtnHandler,correctAnswe
                 icon={faThumbsUp}/></h3>;
         case 3:
             return <h3>{name} , You Are ON FIRE! <FontAwesomeIcon
-                icon={faFireAlt}/></h3>
+                icon={faFireAlt}/></h3>;
         default:
             return null
     }
