@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {Line} from 'rc-progress'
 
-const Status = ({correct, wrong, name, linePercent}) => {
+export const Status = ({correct, wrong, name, linePercent}) => {
     return (
         <div className="font-weight-bold">
             <h4 className="text-shadow">Progress Bar</h4>

@@ -9,7 +9,7 @@ import SummaryPage from "./pages/SummaryPage";
 import {Route, Switch} from "react-router-dom";
 import AppNavBar from './components/AppNavBar'
 
-const Routes = () => {
+export const Routes = () => {
     return (
         <div>
             <Switch>
@@ -24,7 +24,7 @@ const Routes = () => {
     )
 };
 
-function App({view, summaryPageMode}) {
+export function App({view, summaryPageMode}) {
 //    deploying loading interface when fetching data
     if (view === 'loading') {
         return (
