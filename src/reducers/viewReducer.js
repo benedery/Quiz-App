@@ -80,8 +80,9 @@ const viewReducer = (state = viewInitState, action) => {
                 ...state,
                 summaryPageMode: !state.summaryPageMode,
             }
+        default:
+            return state;
     }
-    return state;
 };
 
 export default viewReducer

@@ -28,15 +28,15 @@ const AppNavBar = ({history, newPlayerHandler, selectQuizBtnHandler,correctAnswe
     };
 
     return (
-        <Navbar sticky="top" bg="dark" variant="dark">
+        <Navbar sticky="top" bg="dark" variant="dark" className="App-nav-bar">
             <Navbar.Brand><h3 className="navBar-brand font-weight-bolder">Quiz App</h3></Navbar.Brand>
             <Nav className="mr-5">
                 <Button className="mr-3 font-weight-bold" onClick={() => newPlayerHandler(history)}>New Player</Button>
                 <Button className="mr-5 font-weight-bold" onClick={() => selectQuizBtnHandler(history)}>Select Quiz</Button>
-                <div className="pl-4 message-txt">
-                    <Message/>
-                </div>
             </Nav>
+            <div className="pl-4 message-txt">
+                <Message/>
+            </div>
         </Navbar>
     )
 };

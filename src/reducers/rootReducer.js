@@ -5,8 +5,7 @@ import viewReducer from "./viewReducer";
 const scoreInitState = {
     correctAnswers: 0,
     wrongAnswers: 0,
-    lastResults: [],
-}
+};
 
 const scoresReducer = (state = scoreInitState, action) => {
     switch (action.type) {
@@ -24,9 +23,10 @@ const scoresReducer = (state = scoreInitState, action) => {
             return {
                 ...scoreInitState
             }
+        default:
+            return state;
     }
-    return state;
-}
+};
 
 const rootReducer = combineReducers({
     pageView: viewReducer,
