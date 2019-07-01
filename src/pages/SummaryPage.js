@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import * as actionCreators from "../actions/actionCreators";
 import {Line} from "rc-progress";
 import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/es/test/ButtonGroup";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faQuestionCircle, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
 import {faCrown} from "@fortawesome/free-solid-svg-icons/faCrown";
