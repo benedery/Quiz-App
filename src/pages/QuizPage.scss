@@ -12,14 +12,16 @@
   cursor: pointer;
 }
 
-.quiz-li:hover {
-  background-color: $btnColor;
-  transform: scale(1.03);
-}
-
 .quiz-img {
   width: 100%;
   max-height: 370px;
   margin-bottom: 20px;
   border-radius: 10px;
+}
+
+@media (min-width: 992px) {
+  .quiz-li:hover {
+    background-color: $btnColor;
+    transform: scale(1.03);
+  }
 }
