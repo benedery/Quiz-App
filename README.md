@@ -1,6 +1,7 @@
 ## Quiz-App 
 ## About The Project && Dependencies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 Project uses, React, Redux,
 
 React-Router, Redux-Thunk,
